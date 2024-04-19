@@ -48,12 +48,15 @@
 					<section id="second">
 						<header>
 							<h2>How to configure Nifi?</h2>
+								<header>
+									<p>These tools and components work together to create powerful and flexible data flows within NiFi. Users can drag and drop components onto the canvas, connect them to define the data flow logic, and configure each component's properties to meet their specific requirements. NiFi's intuitive user interface and modular design make it accessible to users with varying levels of technical expertise. The ability to create custom processors and leverage the NiFi expression language further enhances its versatility, allowing users to tailor the platform to their unique data processing needs.</p>
+								</header>
 							<ul class="actions">
 								<li><a href="#third" class="arrow scrolly"><span class="label">Next</span></a></li>
 							</ul>
 						</header>
 						<div class="content">
-							<p><strong>Nifi</strong> is very easy to use and configure. The Nifi UI is pretty basic and understandable, which makes Nifi very fun and easily understandable and easy to use for any beginner. Let's understand the use of tools in Nifi.</p>
+							<p><strong>Nifi's</strong> user interface is indeed designed to be intuitive and user-friendly, it's important to recognize that NiFi is a powerful and feature-rich data integration platform. The simplicity of the UI should not be mistaken for a lack of complexity or capabilities under the hood.</p>
 							<ul class="feature-icons">
 								<li class="feature-icons" style="font-size:20px"><img src="images/gallery/thumbs/processor.png" alt="Processor" height="75" width="75" align="left">Processor</li>
 								<li class="feature-icons" style="font-size:20px"><img src="images/gallery/thumbs/input_port.png" alt="Input Port" height="75" width="75" align="left">Input Port</li>
@@ -64,7 +67,7 @@
 								<li class="feature-icons" style="font-size:20px"><img src="images/gallery/thumbs/import_from_registry.png" alt="Import from Registry" height="75" width="75" align="left">Import from Registry</li>
 								<li class="feature-icons" style="font-size:20px"><img src="images/gallery/thumbs/label.png" alt="Label" height="75" width="75" align="left">Label</li>
 							</ul>
-							<p>All the icons that are shown here is used to access and configurate Nifi in our own manner of use. The Processor is used to add new processor into the hierarchy and can be used to get data, store data and mmany more functions. The input/output port is used to specify the flow of data, i.e from which processor the data is flowing and where it is going. The Process group is used to group the process into one, after that any changes mmade into any processor in the group, it applies to the rest of the processors in that group. The same function is of Remote Process Group, It just adds the functionality of using and accessing that group remotely. Going forward, Funnel is used to take input of data from multiple processor and dumping the results into a single processor, it works same as its name. The Import from registry is used to import the customs instructions from our registry. And lastly the Label is used to label the processor individually for our clarification of use.</p>
+							<p><strong>Processors</strong> are the building blocks of NiFi flows. They perform specific tasks on the data, such as extracting, transforming, routing, or persisting it. <strong>Input/Output Ports</strong> act as entry and exit points for data within a NiFi flow. <strong>Process groups</strong> are containers that logically group related processors and other components together. They help organize and manage complex flows by encapsulating subsets of the overall data processing logic. <strong>Remote process groups</strong> enable communication and data transfer between different NiFi instances or clusters. <strong>Funnels</strong> are used to combine or split data streams within a flow. They can merge data from multiple sources into a single stream or distribute data from a single source to multiple destinations. The <strong>Import from Registry</strong> feature enables users to import pre-built flow templates or components from the Registry into their NiFi instance. <strong>Labels</strong> are visual aids that help users annotate and document their NiFi flows. </p>
 						</div>
 					</section>
 
@@ -80,7 +83,7 @@
 								<section>
 									<header>
 										<h3>Nifi Home</h3>
-										<p>This is the default landing page of Apache Nifi which is basically <a>https://localhost:8443/nifi</a> and from here you can start your Nifi services and run your projects from this page by adding new Processor and configuring them accordingly. It lands to the login page of Nifi and the default username and password can be found on the <a>logs/nifi-app.logs</a> file. We have components panel on the top left side of our home page and on left side we have our Navigate panel which can be used to navigate to our desired processor in the hierarchy of the model, and lastly we have our operative panel which is used to start, stop, pause and terminate our processors and also delete the processor. Now we will now start with adding our first processor of InvokeHTTP to and we will use the API to fetch the data from the link.</p>
+										<p>The default landing page of Apache NiFi is <a>https://localhost:8443/nifi</a>, which serves as the entry point for accessing the NiFi services and running your projects. Upon navigating to this URL, you'll be prompted with a login page. The default username and password can be found in the <a>logs/nifi-app.log file</a>. Once logged in, the NiFi user interface presents a canvas-like workspace where you can design and orchestrate your data flows. The interface is divided into several panels:<strong>Components Panel:</strong> Located in the top-left corner, this panel provides a collection of available processors, controllers, and other components that you can drag and drop onto the canvas to build your data flow.	<strong>Navigate Panel:</strong> Situated on the left side, this panel displays a hierarchical view of your data flow, allowing you to navigate through different process groups and components easily.	<strong>Operate Panel:</strong> This panel, typically located on the right side, offers various controls to start, stop, pause, or terminate your processors. It also provides options to delete processors or perform other operational tasks. To begin your project, you can start by adding the InvokeHTTP processor from the Components Panel. </p>
 										<ul class="actions">
 											<li><a href="#fourth" class="arrow scrolly"><span class="label">Next</span></a></li>
 										</ul>
@@ -98,8 +101,8 @@
 							<!-- Section -->
 								<section  id="fourth">
 									<header>
-										<h3>Step 1: Let's begin with data ingestion by adding InvokeHTTP processor</h3>
-										<p>First begin with adding the processor of InvokeHTTP and then adding the HTTP url in the properties of the processor by double-clicking on the processor. Here we add the API of the data to the HTTP URL properties that we want to fetch. In this case this we are ingesting the data history and realtime price of Bitcoin with the pricing of each dates, with the attributes like opening price, highest price, lowest price, closing price. It requests 10 entries per second which results into almost 600 requests per minute. Here we have also added the label to the processor to justify the work the processor does.</p>
+										<h3>Step 1: Add InvokeHTTP processor</h3>
+										<p>The first step in the NiFi flow is to configure the InvokeHTTP processor, which acts as the entry point for ingesting Bitcoin price data. Double-clicking on the processor allows you to specify the HTTP URL of the Bitcoin price API in the "Remote URL" field. In this project, we are ingesting historical and real-time Bitcoin price data, including attributes like date, opening price, highest price, lowest price, and closing price. The API is configured to return 10 entries per second, resulting in approximately 600 requests per minute, ensuring a steady data flow without overwhelming the API. It is recommended to provide a descriptive label, such as "Fetch Bitcoin Price Data," to clearly indicate the processor's purpose within the NiFi flow.</p>
 										<ul class="actions">
 											<li><a href="#fifth" class="arrow scrolly"><span class="label">Next</span></a></li>
 										</ul>
@@ -116,7 +119,7 @@
 								<section  id="fifth">
 									<header>
 										<h3>Step 2: Adding the JoltTransformjson Processor</h3>
-										<p>Configure this processor to perform the transformation. Using the help of this processor we can transform our fetched data into json file, not only the Nifi can transform the data into json, but also into many formats like csv, tableau file, and many more. The  Use the following Jolt specification to extract the desired fields, double click the processor and when settings window show up set your parameters with the API key and write the code as shown in image to convert your fetched data into json.</p>
+										<p>The retrieved data from the Bitcoin price API was in JSON format, and the SplitJson processor was employed to transform and restructure this JSON data into the desired format. This processor can be configured to perform intricate transformations on the JSON data structure using the EvaluateJsonPath processor and a Jolt specification, a powerful JSON-to-JSON transformation language. By specifying the Jolt specification code in the processor's settings, we can extract desired fields, reshape, filter, and transform the JSON data according to our requirements. Apache NiFi's visual interface, modular design, and processors like SplitJson and EvaluateJsonPath empower us to handle complex JSON data integration tasks with ease and efficiency.</p>
 										<ul class="actions">
 											<li><a href="#sixth" class="arrow scrolly"><span class="label">Next</span></a></li>
 										</ul>
@@ -134,7 +137,7 @@
 							<section  id="sixth">
 								<header>
 									<h3>Step 3: Adding PutFile processor</h3>
-									<p>Configure this processor to write the extracted data to a file at our desired destination and we can also configure it to save the data into not only local storage, but on any cloud space and on any destination we want to store our data and then use it accordingly.</p>
+									<p>The PutFile processor in Apache NiFi offers a versatile solution for persisting transformed data to various destinations. In this project, it was configured to write the extracted Bitcoin price data, transformed into a structured JSON format, to a local directory. However, NiFi's flexibility extends beyond local storage, enabling seamless integration with cloud platforms and remote destinations. The PutFile processor can be easily reconfigured to store data on cloud storage services like Amazon S3, Azure Blob Storage, or Google Cloud Storage, ensuring data accessibility and scalability. Furthermore, NiFi supports a wide range of output formats, including CSV, which was leveraged in this project to convert the JSON data into a CSV format suitable for analysis and visualization tools like Tableau. This versatility empowers users to tailor the data persistence process to their specific requirements, streamlining the integration of data into various downstream systems and applications.</p>
 									<ul class="actions">
 										<li><a href="#seven" class="arrow scrolly"><span class="label">Next</span></a></li>
 									</ul>
@@ -151,7 +154,7 @@
 							<section  id="seven">
 								<header>
 									<h3>Using Tableau to analyze the generated data</h3>
-									<p>Using the last putfile processor, we have converted our json into csv and used that in Tableau to analyze our data and perform more analysis on it. Here the High, Low and Open price is showed accordingly. The X-axis shows the price range of Bitcoin and the Y-axis showcases the monthly change in the price of Bitcoin.</p>
+									<p>The NiFi flow culminated in the transformation of the JSON data into a CSV format, which was subsequently ingested into Tableau for comprehensive data analysis and visualization. The resulting visualization depicted the high, low, and opening prices of Bitcoin, with the x-axis representing the price range and the y-axis illustrating the monthly fluctuations in Bitcoin's value. This visual representation facilitated a deeper understanding of the historical price trends, enabling further exploration and insights into the cryptocurrency market's dynamics.</p>
 									<ul class="actions">
 										<li><a href="#eight" class="arrow scrolly"><span class="label">Next</span></a></li>
 									</ul>
@@ -163,16 +166,33 @@
 								</div>
 							</section>
 
+							<!-- Section -->
+							<section  id="eight">
+								<header>
+									<h3>Conclusion and Results</h3>
+									<p>Apache NiFi proves to be a valuable tool for data integration and automation tasks, thanks to its visual interface, extensible architecture, and rich set of processors. While NiFi is primarily designed for data flow management, it can be integrated with other tools or frameworks for more complex data processing or analysis tasks.</p>
+									<ul class="actions">
+										<li><a href="#nine" class="arrow scrolly"><span class="label">Next</span></a></li>
+									</ul>
+								</header>
+								<div class="content">
+									<p>This project showcases NiFi's capabilities in handling structured data formats like JSON and highlights its potential for streamlining data integration processes across various sources and destinations. Lastly we have performed analysis on the fetched data and showcased it on our likelihood.</p>
+								</div>
+							</section>
+
 						</div>
 					</section>
 
 				<!-- Section -->
-					<section  id="eight">
+					<section  id="nine">
 						<header>
-							<h2>More on how to configure Nifi</h2>
+							<h2>More on Nifi</h2>
+							<ul class="actions">
+								<li><a href="#ten" class="arrow scrolly"><span class="label">Next</span></a></li>
+							</ul>
 						</header>
 						<div class="content">
-							<p><strong>Apache Nifi</strong> is very user friendly and requires no-code to very less code in some cases. While connecting the processor with other processors it requires to mention whether this is to success, failure, terminate, response and retry depends on the relation and task of the processor. In our case the first processor is connected with the second one and here we checklist the success and retry checkbox to mention to the processor that when the data is fethced and it is success then the data is passed onto the next processor to perform its task and keep on retrying for the data updates. Click on the links below to get to know about Nifi Project in detail and how to install and use Nifi.</p>
+							<p><strong>Apache NiFi</strong> is renowned for its user-friendly interface and minimal coding requirements, making it accessible to users with varying technical expertise. When connecting processors within a data flow, it is crucial to define the relationships between them, such as success, failure, termination, response, and retry. In our case, the first processor is linked to the second one, with the success and retry checkboxes selected. This configuration instructs the first processor to pass the fetched data to the subsequent processor for further processing upon successful execution, while also enabling it to retry the operation in case of any updates or changes to the data source. NiFi's visual approach and intuitive relationship management streamline the process of building robust and scalable data pipelines, enabling seamless integration and automation across diverse systems and environments. Click on the links below to get to know about Nifi Project in detail and how to install and use Nifi.</p>
 							<ul class="actions">
 								<li><a href="https://nifi.apache.org/" class="button primary large">Get Started</a></li>
 								<li><a href="https://nifi.apache.org/docs/nifi-docs/html/user-guide.html" class="button large">Documentation</a></li>
@@ -181,7 +201,7 @@
 					</section>
 
 				<!-- Section -->
-					<section>
+					<section id="ten">
 						<header>
 							<h2>Get in touch</h2>
 						</header>
@@ -191,11 +211,11 @@
 						<footer>
 							<ul class="items">
 								<li>
-									<h3>Email</h3>
-									<a href="#">bkatariya@trentu.ca</a>
-								</li>
-								<li>
-									<a href="#">jsatani@trentu.ca</a>
+									<h3>E-mail</h3>
+									<ul class="icons">
+										<li><span> Bhadresh </span><a href="mailto:bkatariya@trentu.ca" class="fa fa-envelope"><span class="label"></span></a></li>
+										<li><span> Jainish </span><a href="mailto:jsatani@trentu.ca" class="fa fa-envelope"><span class="label"></span></a></li>
+									</ul>
 								</li>
 								<li>
 									<h3>Address</h3>
@@ -206,7 +226,7 @@
 									<ul class="icons">
 										<li><span> Bhadresh </span><a href="https://www.linkedin.com/in/bhadresh-katariya-42467728a/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 										<li><span> Jainish </span><a href="https://www.linkedin.com/in/jainish-satani-1549211b1/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-										<li><span> Website Repository </span><a href="https://www.linkedin.com/in/bhadresh-katariya-42467728a/" class="icon brands fa-github-square"><span class="label">Github</span></a></li>
+										<li><span> Website Repository </span><a href="https://github.com/bhadreshkat/Apache-Nifi" class="icon brands fa-github-square"><span class="label">Github</span></a></li>
 									</ul>
 								</li>
 							</ul>
